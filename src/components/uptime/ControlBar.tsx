@@ -98,13 +98,21 @@ export default function ControlBar({
             ))}
           </select>
           {selected && (
-            <Link
-              href={selected.url}
-              target="_blank"
-              className="text-sm rounded-full px-3 py-2 bg-gray-900 text-white hover:bg-black"
-            >
-              Open target
-            </Link>
+            <>
+              <Link
+                href={`/uptime/${selected.id}`} // ✅ 동적 라우트 이동
+                className="text-sm rounded-full px-3 py-2 bg-indigo-600 text-white hover:bg-indigo-700"
+              >
+                Live
+              </Link>
+              <Link
+                href={selected.url}
+                target="_blank"
+                className="text-sm rounded-full px-3 py-2 bg-gray-900 text-white hover:bg-black"
+              >
+                Open target
+              </Link>
+            </>
           )}
         </div>
       </div>
